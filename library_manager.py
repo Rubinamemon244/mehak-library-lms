@@ -129,7 +129,6 @@ def save_library():
         st.error(f"Error loading library: {e}")
         return False
     
-
 #add a book to library
 def add_book(title, author, publication_year,genre, read_status):
     book = {
@@ -350,7 +349,7 @@ elif st.session_state.current_view =="library":
                             st.rerun()
                 with col2:
                     new_status = not book['read_status']
-                    status_label = "Matk as read" if not book['read_status'] else "Mark as Unread"
+                    status_label = "Mark as read" if not book['read_status'] else "Mark as Unread"
                     if st.button(status_label, key=f"status_{i}", use_container_width=True):
                         st.session_state.library[i]['read_status'] = new_status
                         save_library()
@@ -370,7 +369,7 @@ elif st.session_state.current_view =="search":
                 time.sleep(0.5)
                 search_books(search_term, search_by) 
     if hasattr(st.session_state, 'search_results'):
-        if st.session_state.search_reasults:
+        if st.session_state.search_results:
             st.markdown(f"<h3> Found {len(st.session_state.search_results)} results:</h3>", unsafe_allow_html=True)
 
             for i, book in enumerate(st.session_state.search_results):
