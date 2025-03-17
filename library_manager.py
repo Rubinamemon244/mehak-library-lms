@@ -392,7 +392,7 @@ elif st.session_state.current_view =="stats":
 
     if not st.session_state.library:
         st.markdown("<div class='warning-message'> Your library is empty. Add some books to see stats!</div>", unsafe_allow_html=True)
-        else:
+    else:
         stats = get_library_stats()
         col1,col2, col3 = st.columns(3)
         with col1:
