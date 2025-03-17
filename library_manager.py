@@ -192,7 +192,7 @@ def get_library_stats():
 
         #count decades
         decades = (book['publication_year'] // 10) * 10
-        if decades in decades:
+        if decades in decade:
             decades[decades] += 1
         else:
             decades[decades] = 1
